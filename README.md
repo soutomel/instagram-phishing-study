@@ -1,3 +1,4 @@
+
 Instagram Phishing Study — Segurança Cibernética
 ⚠️ Projeto acadêmico: desenvolvido para estudo de phishing, engenharia social e conscientização em segurança. Utilize somente em ambientes controlados e com autorização.
 Tecnologias utilizadas
@@ -36,36 +37,27 @@ index.html
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Instagram</title>
-
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Roboto:400,500"
-  >
-
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500">
   <style>
     * {
       box-sizing: border-box;
     }
-
     body {
       background-color: #fafafa;
       font-family: 'Roboto', sans-serif;
       margin: 0;
       padding: 0;
     }
-
     .container {
       max-width: 400px;
       margin: auto;
       padding: 20px;
       text-align: center;
     }
-
     .logo {
       width: 200px;
       margin: 40px auto 20px;
     }
-
     .facebook-btn {
       background-color: #1877f2;
       color: white;
@@ -81,13 +73,10 @@ index.html
       margin-bottom: 15px;
       gap: 8px;
     }
-
     .facebook-btn svg {
       width: 16px;
       height: 16px;
-    }
-  </style>
-</head>
+    } 
 No Nano:
 Ctrl + O — salvar
 Enter — confirmar
@@ -183,5 +172,4 @@ credenciais;
 dados pessoais;
 endereços IP coletados;
 informações de geolocalização.
-No GitHub, cole isso no editor do README.md e use a aba Preview antes de salvar. Os blocos bash, html, php e text vão aparecer formatados e com opção de copiar.
 
